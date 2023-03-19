@@ -40,7 +40,6 @@ pip install -r requirements.txt
 1. Data preparation following MPIIGaze & UT Multiview-dataset. <br> The following procedure is actually required.
 
 ```bash
-
 # 1) preprocess real image dataset
 Preprocess dataset original images using the files in the 'preprocess dataset' or download the dataset(/misc/dl001/dataset/gaze_dataset).
 
@@ -56,10 +55,6 @@ Automatically performs an evaluation every 500steps.
 
 # 5) Check style transferred images
 Please, check style transferred images in '/eval_img' and 'refine_img'.
-'''
-## Code & Procedure
-'''
-Pre-trained weights is **"//".**
      
 ```
 
