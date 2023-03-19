@@ -1,0 +1,248 @@
+data_directory:
+  dirname: '../data/'
+
+synthetic_image_directory:
+  dirname : '../data/unityeyes_mpiigaze_variable_scale&rot_ver0.0.8/'
+
+synthetic_json_directory:
+  dirname : '../data/unityeyes_mpiigaze_variable_scale&rot_json_ver0.0.8/'
+
+synthetic_rot_image_directory:
+  dirname : '../data/unityeyes_mpiigaze_variable_scale&rot_ver0.0.8/'
+
+synthetic_rot_json_directory:
+  dirname : '../data/unityeyes_mpiigaze_variable_scale&rot_json_ver0.0.8/'
+
+eval_synthetic_image_directory:
+  dirname : '../data/eval_unityeyes_mpiigaze/'
+
+eval_synthetic_json_directory:
+  dirname : '../data/eval_unityeyes_mpiigaze_json/'
+  
+real_image_directory:
+  # dirname : '../data/mpiigaze_train/' 
+  dirname : '../data/ut_multiview_synthe_all/'
+
+real_image_validation_directory:
+  # dirname : '../data/mpiigaze_validation/'
+  dirname : '../data/ut_multiview_validation_data/'
+
+real_eval_directory:
+  # dirname : '../data/real_img_eval/'
+  dirname : '../data/mpiigaze_eval_rename/'
+
+batch_size:
+  #size : 16
+  #size : 6
+  size : 3
+
+regressor_batch_size:
+  size : 50
+
+eval_batch_size:
+  size : 25
+
+log_directory:
+  dirname : '../log/'
+  
+log_file_name:
+  filename : 'log.csv'
+
+save_image_directory:
+  dirname : '../eval_img/'
+
+save_train_image_directory:
+  dirname : '../check_image/'
+
+save_refiner_train_image_directory:
+  dirname : '../mpiigaze_refiner_pre_pretrain_image/'
+
+test_output_csv:
+  csv_name : '../gaze_estimator.csv'
+
+gradient_graph_csv:
+  csv_name : '../ge_corr_rev01_graph.csv'
+
+test_output_directory:
+  dirname : '../test_output/'
+
+radient_graph_directory:
+  dirname : '../test_output/'
+
+test_result_directory:
+  dirname : '../test_result/'
+
+validation_ldmk:
+  dirname : '../valid_ldmk/'
+
+edge_kernel_size:
+  size : 8  
+
+nstack:
+  param: 3
+
+nfeatures:
+  param : 32
+
+nlandmarks:
+  param : 34
+
+refiner_lr:
+  param : 0.0002
+  #param : 0.000005
+  
+discriminator_lr:
+  param : 0.00005
+
+regressor_lr:
+  param : 0.0004
+
+gaze_estimator_lr:
+  param : 0.0004
+
+hourglass_net_lr:
+  param : 0.0005
+
+densenet_net_lr:
+  param : 0.0005
+
+gpu_num:
+  num : [0, 1]
+  
+num_worker:
+  num : 3
+
+log_interval:
+  num : 500
+  # num : 10
+  
+train_iteration:
+  num : 600001
+  
+test_batch_size:
+  size : 100
+
+refiner_pretrain_iteration:
+  num : 2000
+
+discriminator_pretrain_iteration:
+  num : 2000
+  
+regressor_pretrain_iteration:
+  num : 12000
+
+densenet_pretrain_iteration:
+  num : 12000
+
+updates_refiner_per_step:
+  num : 1
+  
+updates_discriminator_per_step:
+  num : 2
+
+updates_regressor_per_step:
+  num : 1
+  
+updates_gaze_estimator_per_step:
+  num : 1
+
+updates_hourglass_net_per_step:
+  num : 1
+
+updates_densenet_per_step:
+  num : 1
+
+print_interval:
+  num : 100
+  
+save_interval:
+  # num : 5000
+  num : 500
+
+Refiner1_save_interval:
+  num : 100
+
+log:
+  bool : True
+  
+train:
+  bool : 'train = True'
+
+checkpoint_path:
+  pathname : '../checkpoint_path/'
+
+test_checkpoint_path:
+  pathname : '../test_checkpoint_path/'
+
+Refiner1_checkpoint_path:
+  pathname : '../Refiner1_checkpoint_path/'
+
+optimizer_path:
+  pathname : 'optimizer_status_%d.pkl'    
+
+pretrain_optimizer_path:
+  pathname : 'optimizer_status_0.pkl'    
+
+global_discriminator1_path:
+  pathname : 'G_D1_%d.pkl'  
+
+local_discriminator1_path:
+  pathname : 'L_D1_%d.pkl'
+  
+global_discriminator2_path:
+  pathname : 'G_D2_%d.pkl'  
+  
+local_discriminator2_path:
+  pathname : 'L_D2_%d.pkl'  
+
+pretrain_global_discriminator1_path:
+  pathname : 'G_D1_0.pkl'  
+
+pretrain_local_discriminator1_path:
+  pathname : 'L_D1_0.pkl'
+  
+pretrain_global_discriminator2_path:
+  pathname : 'G_D2_0.pkl'  
+  
+pretrain_local_discriminator2_path:
+  pathname : 'L_D2_0.pkl'
+  
+refiner1_path:
+  pathname : 'R1_%d.pkl'
+  
+refiner2_path:
+  pathname : 'R2_%d.pkl'
+  
+pretrain_refiner1_path:
+  pathname : 'R1_0.pkl'
+  
+pretrain_refiner2_path:
+  pathname : 'R2_0.pkl'
+  
+regressor_path:
+  pathname : 'Reg_%d.pkl'
+  
+pretrain_regressor_path:
+  pathname : 'Reg_0.pkl'
+  
+gaze_estimator_path:
+  pathname : 'Gaze_%d.pkl'
+  
+pretrain_gaze_estimator_path:
+  pathname : 'Gaze_0.pkl'
+
+pretrain_hourglass_path:
+  pathname : 'Hourglass_net_0.pkl'
+  
+pretrain_densenet_path:
+  pathname : 'Densenet_0.pkl'
+
+hourglass_net_path:
+  pathname : 'Hourglass_net_%d.pkl'
+
+densenet_path:
+  pathname : 'Densenet_%d.pkl'
+
+
+
+
