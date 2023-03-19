@@ -56,8 +56,9 @@ Automatically performs an evaluation every 500steps.
 
 # 5) Check style transferred images
 Please, check style transferred images in '/eval_img' and 'refine_img'.
-
-##Pretrained Models
+'''
+## Code & Procedure
+'''
 Pre-trained weights is **"//".**
      
 ```
