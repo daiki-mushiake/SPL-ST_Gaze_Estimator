@@ -18,7 +18,7 @@ from PIL import Image, ImageFilter
 from util.gazemap_tensor import gazemap_generator
 
 with open('config.yaml', 'r') as yml:
-	config = yaml.safe_load(yml)
+    config = yaml.load(yml,Loader=yaml.Loader)
 
 def eval_synthe_gazemap(Reg, synthe_eval_data_iter, current_step):
     stack_img = torch.empty(7, 3, 36, 60)

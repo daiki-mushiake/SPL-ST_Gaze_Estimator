@@ -7,7 +7,7 @@ import numpy as np
 import yaml
 import torch.nn as nn
 with open('config.yaml', 'r') as yml:
-	config = yaml.safe_load(yml)
+    config = yaml.load(yml,Loader=yaml.Loader)
 
 def nan_checker(data, name):
     nan_check = torch.isnan(data)

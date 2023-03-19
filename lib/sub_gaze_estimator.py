@@ -39,7 +39,7 @@ from torchvision import transforms, utils
 import yaml
 
 with open('config.yaml', 'r') as yml:
-	config = yaml.safe_load(yml)
+    config = yaml.load(yml,Loader=yaml.Loader)
 
 class GazeEstimator:
 	def __init__(self):

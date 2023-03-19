@@ -27,7 +27,8 @@ torch.manual_seed(seed_num)
 random.seed(seed_num)
 
 with open('config.yaml', 'r') as yml:
-    config = yaml.load(yml)
+    config = yaml.load(yml,Loader=yaml.Loader)
+    
 fake_dir = config['synthetic_image_directory']['dirname']
 fake_num = len(os.listdir(fake_dir))
 eval_fake_dir = config['eval_synthetic_image_directory']['dirname']

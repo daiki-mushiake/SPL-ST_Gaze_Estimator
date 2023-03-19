@@ -11,7 +11,7 @@ from PIL import Image
 from torchvision.utils import save_image
 
 with open('config.yaml', 'r') as yml:
-	config = yaml.safe_load(yml)
+    config = yaml.load(yml,Loader=yaml.Loader)
 
 class EvaluationGazeEstimator:
 	def __init__(self, densenet, current_step):

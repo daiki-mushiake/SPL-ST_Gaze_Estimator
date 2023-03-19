@@ -6,42 +6,35 @@
 
 ## Directories
 ```plain
-SP/
-    data/                           							 
-        nuscenes/  ←dl001 datasetに有ります．               		    
-                annotations/
-                maps/
-                samples/
-                sweeps/
-                v1.0-trainval/
-        train_data/
-                depth_complition_mlp2_aug4_neg_0.0 ←dl001 /kotani/workspace/DERURD/data/train_data/に有ります．
-                depth_complition_hg_mlp2_aug4_neg_0.0 ←dl001 /kotani/workspace/DERURD/data/train_data/に有ります．
-        mer/
-                mer_2_30_5_0.5_mlp2_aug4_neg_0.0.h5 ←dl001 /kotani/workspace/DERURD/data/mer/に有ります．
-    lib/
-    scripts/
-    external/                   				   	        
-        panoptic-deeplab/       
-        RAFT/                   	     				
+SPL-ST_Gaze_Estimator/
+	data/
+	lib/
+	Refiner1_checkpoint_path/
+	augmentation_img/
+	check_image/
+	checkpoint_path
+	eval_img/
+	image/
+	log/
+	raft_pretrained_model/
+	refine_img/
+	result/
+	test_output/
+	valid_ldmk/
+       	     				
 ```
 
 
 ## Setup
-- Create a pyenv
-```bash
-cd DERUR
-pyenv virtualenv  3.6.9 DERUR
-pyenv local DERUR
-```
 - Install required packages
 ```bash
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
-- Download [nuScenes dataset](https://www.nuscenes.org/) (Full dataset (v1.0)) into data/nuscenes/
-- Clone external repos [Panoptic-DeepLab](https://github.com/bowenc0221/panoptic-deeplab) and [RAFT](https://github.com/princeton-vl/RAFT)
-into external/
+- Download [MPIIGAZE dataset](https://www.mpi-inf.mpg.de/departments/computer-vision-and-machine-learning/research/gaze-based-human-computer-interaction/appearance-based-gaze-estimation-in-the-wild) 
+[UT Multi-view dataset](https://www.ut-vision.org/datasets/) 
+[Columbia Gaze(CAVE) dataset](https://www.cs.columbia.edu/CAVE/databases/columbia_gaze/) 
+[ETH-XGaze dataset](https://ait.ethz.ch/projects/2020/ETH-XGaze/) 
 
 ## Code
 1. Data preparation following Long et al. <br> The following procedure is actually required, but can be avoided by accessing <br>

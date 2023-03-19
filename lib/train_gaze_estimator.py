@@ -47,7 +47,7 @@ from losses.losses import HeatmapLoss, GazeLoss, LandmarkLoss
 from evaluation.evaluation_gaze import EvaluationGazeEstimator
 
 with open('config.yaml', 'r') as yml:
-	config = yaml.safe_load(yml)
+    config = yaml.load(yml,Loader=yaml.Loader)
 
 fake_num = len(os.listdir(config['synthetic_image_directory']['dirname']))
 real_num = len(os.listdir(config['real_image_directory']['dirname']))
@@ -1110,5 +1110,17 @@ class TrainGazeEstimator(GazeEstimator):
                 torch.save(state, os.path.join(config['checkpoint_path']['pathname'], config['optimizer_path']['pathname'] % step))
 
 if __name__ == '__main__':
-	trainer = TrainGazeEstimator()
-	trainer.train()
+    os.makedirs('../Refiner1_checkpoint_path/', exist_ok=True)
+    os.makedirs('../augmentation_img/', exist_ok=True)
+    os.makedirs('../check_image/', exist_ok=True)
+    os.makedirs('../checkpoint_path/', exist_ok=True)
+    os.makedirs('../data/', exist_ok=True)
+    os.makedirs('../eval_img/', exist_ok=True)
+    os.makedirs('../image/', exist_ok=True)
+    os.makedirs('../log/', exist_ok=True)
+    os.makedirs('../refine_img/', exist_ok=True)
+    os.makedirs('../result/', exist_ok=True)
+    os.makedirs('../test_output/', exist_ok=True)
+    os.makedirs('../valid_ldmk/', exist_ok=True)
+    trainer = TrainGazeEstimator()
+    trainer.train()

@@ -12,7 +12,7 @@ import yaml
 import openpyxl
 
 with open('config.yaml', 'r') as yml:
-	config = yaml.safe_load(yml)
+    config = yaml.load(yml,Loader=yaml.Loader)
     
 
 def loop_iter(dataloader):

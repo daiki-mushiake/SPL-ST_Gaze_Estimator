@@ -3,7 +3,7 @@ import torch.nn as nn
 import yaml
 
 with open('config.yaml', 'r') as yml:
-    config = yaml.safe_load(yml)
+    config = yaml.load(yml,Loader=yaml.Loader)
 
 def calc_iris_parameter(ldmk):
     

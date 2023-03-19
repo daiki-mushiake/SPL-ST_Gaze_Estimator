@@ -28,8 +28,7 @@ from models.layers import Conv, Hourglass, Pool, Residual
 from util.softargmax import softargmax2d
 
 with open('config.yaml', 'r') as yml:
-#with open('config.yaml', 'r') as yml:
-	config = yaml.safe_load(yml)
+    config = yaml.load(yml,Loader=yaml.Loader)
 
 nstack = config['nstack']['param']
 nfeatures = config['nfeatures']['param']
