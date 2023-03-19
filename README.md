@@ -37,11 +37,9 @@ pip install -r requirements.txt
 [ETH-XGaze dataset](https://ait.ethz.ch/projects/2020/ETH-XGaze/) 
 
 ## Code
-1. Data preparation following Long et al. <br> The following procedure is actually required, but can be avoided by accessing <br>
-**/kotani/workspace/DERURD/data/prepared_data.h5.**
+1. Data preparation following MPIIGaze & UT Multiview-dataset. <br> The following procedure is actually required.
 
 ```bash
-cd scripts
 
 # 1) preprocess real image dataset
 Preprocess dataset original images using the files in the 'preprocess dataset' or download the dataset(/misc/dl001/dataset/gaze_dataset).
