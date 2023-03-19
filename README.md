@@ -36,7 +36,7 @@ pip install -r requirements.txt
 [Columbia Gaze(CAVE) dataset](https://www.cs.columbia.edu/CAVE/databases/columbia_gaze/) 
 [ETH-XGaze dataset](https://ait.ethz.ch/projects/2020/ETH-XGaze/) 
 
-## Code
+## Code & Procedure
 1. Data preparation following MPIIGaze & UT Multiview-dataset. <br> The following procedure is actually required.
 
 ```bash
@@ -52,50 +52,13 @@ UnityEyes(https://www.cl.cam.ac.uk/research/rainbow/projects/unityeyes/)
 CUDA_VISIBLE_DEVICES=, python lib/train_gaze_estimator.py
 
 # 4) Evaluation
-Automatically performs an evaluation every 500steps
+Automatically performs an evaluation every 500steps.
 
 # 5) Check style transferred images
 Please, check style transferred images in '/eval_img' and 'refine_img'.
 
+##Pretrained Models
+Pre-trained weights is **"//".**
      
 ```
 
-2. Gaze Estimation
-```bash
-CUDA_VISIBLE_DEVICES=8,9 python3 train_gaze_estimator.py  # train & evaluation
-```
-3. Generate mapped radar data (MRD) <br> 
-The following procedure is actually required, but can be avoided by accessing  <br> 
-**"/kotani/workspace/DERURD/data/mer_2_30_5_0.5_mlp2_aug4_neg_0.0.h5".**
-
-```bash
-python cal_mer.py
-```
-
-4. Train depth completion by using the enhanced depth
-- Depth completion scheme 1 ([Using depths and RGB as input channels](https://arxiv.org/pdf/1709.07492.pdf))
-
-```bash
-python train_depth.py        	# train
-python test_depth.py         	# test
-```
-<!-- Download [pre-trained weights](https://) -->
-Pre-trained weights is **"/kotani/workspace/DERURD/data/train_data/prepared_data.h5".**
-
-- Depth completion scheme 2 ([Multi-Scale Guided Cascade Hourglass Network](https://github.com/anglixjtu/msg_chn_wacv20))
-
-```bash
-python train_depth_hg.py        # train
-python test_depth_hg.py         # test
-```
-<!-- Download [pre-trained weights](https://). -->
-Pre-trained weights is **"/kotani/workspace/DERURD/data/train_data/prepared_data.h5".**
-
-
-## Citation
-```plain
-
-```
-
-
-# SPL-ST_Gaze_Estimator
