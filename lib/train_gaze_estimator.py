@@ -1007,9 +1007,6 @@ class TrainGazeEstimator(GazeEstimator):
         assert self.current_step < config['train_iteration']['num'], 'Target step is smaller than current step'
         for step in tqdm(range((self.current_step + 1), config['train_iteration']['num'])):
             print(os.getcwd())
-            print("Synthetic Image:",config['synthetic_image_directory']['dirname'])
-            print("Train:",config['real_image_directory']['dirname'])
-            print("Test:",config['real_image_test_directory']['dirname'])
 
             self.current_step = step
 
@@ -1066,8 +1063,11 @@ class TrainGazeEstimator(GazeEstimator):
                 self.writer.add_scalar("Gaze Estimator/utmultiview valid mean diff gaze", self.utmultiview_valid.item(), global_step = step)
                 self.writer.add_scalar("Gaze Estimator/utmultiview test mean diff gaze", self.utmultiview_test.item(), global_step = step)
                 self.writer.add_scalar("Gaze Estimator/mpiigaze valid mean diff gaze", self.mpiigaze_valid.item(), global_step = step)
-                self.writer.add_scalar("Gaze Estimator/mpiigaze test mean diff gaze", self.mpiigaze_test.item(), global_step = step)          
-                self.writer.add_scalar("Gaze Estimator/ETH-Xgaze valid mean diff gaze", self.eth_xgaze_valid.item(), global_step = step)
+                self.writer.add_scalar("Gaze Estimator/mpiigaze test mean diff gaze", self.mpiigaze_test.item(), global_step = step) 
+                self.writer.add_scalar("Gaze Estimator/columbia valid mean diff gaze", self.columbia_valid.item(), global_step = step) 
+                self.writer.add_scalar("Gaze Estimator/columbia test mean diff gaze", self.columbia_test.item(), global_step = step) 
+                self.writer.add_scalar("Gaze Estimator/ETH-Xgaze valid mean diff gaze", self.eth_valid.item(), global_step = step)
+                self.writer.add_scalar("Gaze Estimator/ETH-Xgaze test mean diff gaze", self.eth_test.item(), global_step = step)
                 # self.writer.add_scalar("Gaze Estimator/mpiigaze test calib mean diff gaze", self.mpiigaze_calib_test.item(), global_step = step)        
                 # self.writer.add_scalar('Hourglass/synthetic gazemap loss', self.synthetic_gazemap_loss.item(), global_step=step)
                 self.writer.add_scalar('Densenet/synthetic gaze loss', self.pred_refined_gaze_loss.item(), global_step=step)                                
